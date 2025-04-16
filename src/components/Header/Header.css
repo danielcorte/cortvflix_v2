@@ -1,0 +1,19 @@
+.container_header {
+    display: flex;
+
+    justify-content: space-between;
+    padding: 0 50px;
+    align-items: center;
+    background-color: rgb(41, 41, 55);
+    height: 150px;
+}
+
+.container_header img {
+    width: 200px;
+}
+
+h1 {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    font-size: 50px;
+    color: red;
+}

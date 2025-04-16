@@ -1,0 +1,50 @@
+.container_card {
+    background-color: #5774b4;
+    position: relative;
+    width: 280px;
+    height: 500px;
+    margin: 0.5rem;
+    overflow: hidden;
+    border-radius: 5px;
+    transition: transform 0.3 ease;
+    margin-left: 30px;
+
+}
+
+.container_card img {
+    width: 300px;
+    height: 400px;
+    display: block;
+    border-radius: 5px;
+}
+
+.container_card:hover {
+    transform: scale(1.1);
+}
+
+h3 {
+    font-size: 20px;
+    color: azure;
+    margin: 0.5rem 0;
+    font-family: "Roboto";
+}
+
+p {
+    font-size: 0.875rem;
+    color: #fff;
+    padding: 0.5rem;
+    background-color: #141414;
+    position: absolute;
+    width: 100%;
+    opacity: 0;
+    transform: opacity 0.3s ease;
+}
+
+.container_card:hover p {
+    opacity: 1;
+}
+
+figure {
+    display: flex;
+    justify-content: center;
+}
