@@ -85,17 +85,15 @@ Todas as categorias são funcionais e exibem os conteúdos corretamente.
 - A integração com a API do TMDB permite escalar e adaptar facilmente para novos tipos de conteúdo.
 
 ## 📂 Estrutura de Pastas (resumida)
-bash
-Copy
-Edit
-src/
-├── api/                # Chamadas à API do TMDB
-├── components/         # Componentes reutilizáveis (Navbar, Sidebar, HeroBanner, etc)
-├── pages/              # Páginas principais da aplicação
-├── assets/             # Imagens e recursos visuais
-├── context/            # Gerenciamento de perfil
-├── App.jsx             # Componente principal
-├── main.jsx            # Ponto de entrada
+
+src/<br>
+├── api/                # Chamadas à API do TMDB<br>
+├── components/         # Componentes reutilizáveis (Navbar, Sidebar, HeroBanner, etc)<br>
+├── pages/              # Páginas principais da aplicação<br>
+├── assets/             # Imagens e recursos visuais<br>
+├── context/            # Gerenciamento de perfil<br>
+├── App.jsx             # Componente principal<br>
+├── main.jsx            # Ponto de entrada<br>
 
 🧑‍💻 Autor
 Feito com ❤️ por Daniel Corte
