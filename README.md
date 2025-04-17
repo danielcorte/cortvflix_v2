@@ -95,5 +95,5 @@ src/
 ├── App.jsx             # Componente principal
 ├── main.jsx            # Ponto de entrada
 ```
-🧑‍💻 Autor
+## 🧑‍💻 Autor
 Feito com ❤️ por Daniel Corte
