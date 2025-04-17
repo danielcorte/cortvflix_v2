@@ -3,42 +3,45 @@ import { fetchTopRated } from '../api/tmdb';
 import ContentRow from '../components/ContentRow';
 import Navbar from '../components/Navbar';
 import SideNav from '../components/SideNav';
+import { useProfile } from './ProfileContext';
 
-export default function TopRated() {
+export default function Movies() {
   const [topRated, setTopRated] = useState([]);
   const [loading, setLoading] = useState(true);
-
-  const getImageUrl = (path) => {
-    return `https://image.tmdb.org/t/p/w500${path}`;
-  };
+    const { currentProfile } = useProfile();
 
   useEffect(() => {
+
     const load = async () => {
       const data = await fetchTopRated();
       setTopRated(data.results);
       setLoading(false);
     };
     load();
-  }, []);
+  }, [currentProfile]);
+
+if (!currentProfile) {
+    return null; // Evita renderização indesejada
+  }
 
   return (
     <div className="min-h-screen bg-black">
-      <Navbar />
+      <Navbar currentProfile={currentProfile} />
       <SideNav />
-        <div className="pl-16 pt-4 text-white">
-            <h1 className="text-2xl font-bold mb-4">Mais Bem Avaliados</h1>
-            {loading ? (
-            <div className="text-red-600">Carregando...</div>
-            ) : (
-            <div className="flex flex-wrap gap-4 pl-60">
-                {topRated.map((item, index) => (
-                <div key={index} className="w-1/4">
-                    <ContentRow title={item.title} items={[item]} hideArrows />
-                </div>
-                ))}
-            </div>
-            )}
-        </div>
+      <div className="pl-16 pt-4 text-white">
+        <h1 className="text-2xl font-bold mb-4">Filmes Populares</h1>
+        {loading ? (
+          <div className="text-red-600">Carregando...</div>
+        ) : (
+              <div className="flex flex-wrap gap-4 pl-60">
+                  {topRated.map((item, index) => (
+                      <div key={index} className="w-1/4">
+                          <ContentRow title={item.title} items={[item]} hideArrows />
+                      </div>
+                  ))}
+              </div>
+        )}
+      </div>
     </div>
   );
 }

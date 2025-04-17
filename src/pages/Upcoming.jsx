@@ -3,26 +3,33 @@ import { fetchUpcoming } from '../api/tmdb';
 import ContentRow from '../components/ContentRow';
 import Navbar from '../components/Navbar';
 import SideNav from '../components/SideNav';
+import { useProfile } from './ProfileContext';
 
-export default function Upcoming() {
+export default function Movies() {
   const [upcoming, setUpcoming] = useState([]);
   const [loading, setLoading] = useState(true);
+    const { currentProfile } = useProfile();
 
   useEffect(() => {
+
     const load = async () => {
       const data = await fetchUpcoming();
       setUpcoming(data.results);
       setLoading(false);
     };
     load();
-  }, []);
+  }, [currentProfile]);
+
+if (!currentProfile) {
+    return null; // Evita renderização indesejada
+  }
 
   return (
     <div className="min-h-screen bg-black">
-      <Navbar />
+      <Navbar currentProfile={currentProfile} />
       <SideNav />
       <div className="pl-16 pt-4 text-white">
-        <h1 className="text-2xl font-bold mb-4">Lançamentos</h1>
+        <h1 className="text-2xl font-bold mb-4">Filmes Populares</h1>
         {loading ? (
           <div className="text-red-600">Carregando...</div>
         ) : (
