@@ -35,3 +35,8 @@ export const searchContent = async (query) => {
 export const getImageUrl = (path, size = 'original') => {
   return `${IMAGE_BASE_URL}/${size}${path}`;
 };
+
+export const fetchOriginals = async () => {
+  const response = await fetch(`${BASE_URL}/discover/movie?api_key=${API_KEY}&with_networks=213`); // Exemplo para filmes da rede 'Netflix' (network ID: 213)
+  return response.json();
+};

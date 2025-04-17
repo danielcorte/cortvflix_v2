@@ -7,9 +7,9 @@ function App() {
   return (
 // tags fantasmas: são as tagas vazias a ponto de persistir a renderização de dois
 // ou mais elementos HTML no mesmo componente
-    <BrowserRouter>
-      <Rotas/>
-    </BrowserRouter>
+<>
+<Rotas />
+</>
   )
 }
 

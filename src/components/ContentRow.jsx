@@ -2,7 +2,7 @@ import { useState, useRef } from 'react';
 import { ChevronLeft, ChevronRight } from 'lucide-react';
 import { getImageUrl } from '../api/tmdb';
 
-export default function ContentRow({ title, items }) {
+export default function ContentRow({ title, items, hideArrows = false }) {
   const rowRef = useRef(null);
   const [showLeftArrow, setShowLeftArrow] = useState(false);
   const [showRightArrow, setShowRightArrow] = useState(true);
@@ -49,14 +49,14 @@ export default function ContentRow({ title, items }) {
       <h2 className="text-2xl font-semibold text-white mb-4 px-4">{title}</h2>
       
       <div className="relative">
-        {showLeftArrow && (
-          <button
-            className="absolute left-0 top-0 bottom-0 z-40 flex items-center justify-center w-12 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
-            onClick={() => scroll('left')}
-          >
-            <ChevronLeft className="w-8 h-8 text-white" />
-          </button>
-        )}
+      {!hideArrows && showLeftArrow && (
+        <button
+          className="absolute left-0 top-0 bottom-0 z-40 flex items-center justify-center w-12 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
+          onClick={() => scroll('left')}
+        >
+          <ChevronLeft className="w-8 h-8 text-white" />
+        </button>
+)}
         
         <div
           ref={rowRef}
@@ -107,14 +107,14 @@ export default function ContentRow({ title, items }) {
           ))}
         </div>
         
-        {showRightArrow && (
+        {!hideArrows && showRightArrow && (
           <button
             className="absolute right-0 top-0 bottom-0 z-40 flex items-center justify-center w-12 bg-black/50 opacity-0 group-hover:opacity-100 transition-opacity duration-300"
             onClick={() => scroll('right')}
           >
             <ChevronRight className="w-8 h-8 text-white" />
           </button>
-        )}
+)}
       </div>
     </div>
   );

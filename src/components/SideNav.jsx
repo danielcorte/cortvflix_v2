@@ -1,4 +1,4 @@
-import { Home, TrendingUp, Film, Tv2, Clock, Heart, Star, Menu } from 'lucide-react';
+import { Home, TrendingUp, Film, Tv2, Clock, Heart, Star, Menu, Search } from 'lucide-react';
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
 
@@ -6,14 +6,16 @@ export default function SideNav() {
   const [isExpanded, setIsExpanded] = useState(false);
 
   const menuItems = [
-    { icon: Home, label: 'Início' },
-    { icon: TrendingUp, label: 'Em Alta' },
-    { icon: Film, label: 'Filmes' },
-    <Link to="series"> icon: Tv2, label: 'Séries' </Link>,
-    { icon: Clock, label: 'Minha Lista' },
-    { icon: Heart, label: 'Favoritos' },
-    { icon: Star, label: 'Originais' },
+    { icon: Home, label: 'Início', to: '/' },
+    { icon: Search, label: 'Pesquisar', to: '/pesquisar' },
+    { icon: TrendingUp, label: 'Em Alta', to: '/em-alta' },
+    { icon: Film, label: 'Filmes', to: '/filmes' },
+    { icon: Tv2, label: 'Séries', to: '/series' },
+    { icon: Clock, label: 'Em breve', to: '/em-breve' },
+    { icon: Heart, label: 'Favoritos', to: '/favoritos' },
+    { icon: Star, label: 'Originais', to: '/originais' },
   ];
+  
 
   return (
     <div
@@ -30,19 +32,19 @@ export default function SideNav() {
       </button>
       
       <nav className="mt-4">
-        {menuItems.map((item, index) => (
-          <a
-            key={index}
-            href="#"
-            className="w-full p-4 flex items-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
-          >
-            <item.icon className="w-6 h-6 flex-shrink-0" />
-            {isExpanded && (
-              <span className="ml-4 whitespace-nowrap">{item.label}</span>
-            )}
-          </a>
-        ))}
-      </nav>
+  {menuItems.map((item, index) => (
+    <Link
+      to={item.to}
+      key={index}
+      className="w-full p-4 flex items-center text-gray-400 hover:text-white hover:bg-white/10 transition-colors"
+    >
+      <item.icon className="w-6 h-6 flex-shrink-0" />
+      {isExpanded && (
+        <span className="ml-4 whitespace-nowrap">{item.label}</span>
+      )}
+    </Link>
+  ))}
+</nav>
     </div>
   );
 }

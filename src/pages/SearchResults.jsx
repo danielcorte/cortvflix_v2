@@ -14,7 +14,7 @@ import {
 import { useProfile } from './ProfileContext';
 import { useNavigate } from 'react-router-dom';
 
-export default function Inicial() {
+export default function SearchResults() {
   const { currentProfile } = useProfile();
   const navigate = useNavigate();
 
@@ -108,11 +108,8 @@ export default function Inicial() {
             <ContentRow title="Resultados da Pesquisa" items={searchResults} />
           ) : (
             <>
-              <ContentRow title="Em Alta" items={trending} />
-              <ContentRow title="Filmes Populares" items={popularMovies} />
-              <ContentRow title="Séries Populares" items={popularTVShows} />
-              <ContentRow title="Mais Bem Avaliados" items={topRated} />
-              <ContentRow title="Lançamentos" items={upcoming} />
+              <h1 className='flex items-center justify-center text-2xl pb-5'>Pesquise pelo seus Filmes/Series preferidos na barra de pesquisa</h1>
+              <h2 className='flex items-center justify-center text-xl'>Sim, a barra de pesquisa funciona</h2>
             </>
           )}
         </div>
