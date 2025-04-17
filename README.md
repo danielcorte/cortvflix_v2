@@ -41,56 +41,50 @@ VITE_TMDB_API_KEY=sua_api_key_aqui
 npm run dev
 Acesse: http://localhost:5173 🚀
 
-🧩 Funcionalidades
-👤 Perfis Dinâmicos
-O usuário pode escolher seu perfil ao entrar na aplicação.
+# 🧩 Funcionalidades
+## 👤 Perfis Dinâmicos
+- O usuário pode escolher seu perfil ao entrar na aplicação.
 
-A foto e nome do perfil são exibidos dinamicamente durante toda a navegação.
+- A foto e nome do perfil são exibidos dinamicamente durante toda a navegação.
 
-Cada sessão mantém seu próprio contexto de navegação.
+- Cada sessão mantém seu próprio contexto de navegação.
 
-🧭 Sidebar de Navegação
-Uma sidebar fixa exibe as principais categorias de conteúdo, como:
+## 🧭 Sidebar de Navegação
+- Uma sidebar fixa exibe as principais categorias de conteúdo, como:
 
-Em alta
+- Em alta
 
-Filmes Populares
+- Filmes Populares
 
-Séries Populares
+- Séries Populares
 
-Mais Bem Avaliados
+- Mais Bem Avaliados
 
-Lançamentos
+- Lançamentos
 
 Todas as categorias são funcionais e exibem os conteúdos corretamente.
 
-🔍 Barra de Busca
-A barra de busca é totalmente funcional.
+## 🔍 Barra de Busca
+- A barra de busca é totalmente funcional.
 
-O usuário pode digitar um termo (como "Batman", "Breaking Bad") e ver os resultados em tempo real.
+- O usuário pode digitar um termo (como "Batman", "Breaking Bad") e ver os resultados em tempo real.
 
-As buscas são realizadas via API do TMDB, retornando filmes, séries e atores relacionados.
+- As buscas são realizadas via API do TMDB, retornando filmes, séries e atores relacionados.
 
-🎥 Apresentação de Conteúdo
-Os conteúdos são exibidos em carrosséis horizontais com rolagem.
+## 🎥 Apresentação de Conteúdo
+- Os conteúdos são exibidos em carrosséis horizontais com rolagem.
 
-Cada card mostra a capa e detalhes do item.
+- Cada card mostra a capa e detalhes do item.
 
-A página inicial inclui:
+### A página inicial inclui:
 
-Banner principal com destaque (Hero)
+- Banner principal com destaque (Hero)
 
-Diversas seções com listagens diferentes de conteúdo.
+- Diversas seções com listagens diferentes de conteúdo.
 
-📱 Responsividade
-O projeto é totalmente responsivo, adaptando-se a diversos tamanhos de tela.
+- A integração com a API do TMDB permite escalar e adaptar facilmente para novos tipos de conteúdo.
 
-💡 Dicas
-Você pode personalizar os perfis, categorias e até temas da aplicação.
-
-A integração com a API do TMDB permite escalar e adaptar facilmente para novos tipos de conteúdo.
-
-📂 Estrutura de Pastas (resumida)
+## 📂 Estrutura de Pastas (resumida)
 bash
 Copy
 Edit
@@ -102,14 +96,6 @@ src/
 ├── context/            # Gerenciamento de perfil
 ├── App.jsx             # Componente principal
 ├── main.jsx            # Ponto de entrada
-🧪 Futuras Melhorias
-Autenticação com Firebase
-
-Perfil com histórico de assistidos
-
-Player de vídeo integrado
-
-Avaliações e recomendações personalizadas
 
 🧑‍💻 Autor
 Feito com ❤️ por Daniel Corte
